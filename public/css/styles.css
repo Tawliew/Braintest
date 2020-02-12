@@ -1,0 +1,38 @@
+body {
+    background-image: url(/images/capela-sistina.jpg);
+    background-size: cover;
+    text-align: center;
+    opacity: 1;
+}
+
+#title {
+    font-family: 'Zilla Slab', serif;
+    font-size: 2rem;
+    margin: 3%;
+    color: white;
+}
+
+
+.container {
+    display: block;
+    width: 50%;
+    margin: auto;
+    margin-top: 10%;
+
+}
+
+h1:after {
+    content: "|";
+    opacity: 0;
+    animation: blink;
+    animation-iteration-count: 4;
+    animation-duration: 1s;
+}
+@keyframes blink{
+    0%,100%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+}
