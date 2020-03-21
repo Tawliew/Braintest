@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link type:"text/css" rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Zilla+Slab&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Brainstest</title>
+</head>
+<body id="title">
+    <div class="container">
+        
+        <h1 class="maq">Patheis Test</h1>
+
+    </div>
+    <div>
+        <form action="/" method="POST">
+            <p id="p" class="maq" style="visibility: hidden">super hanc petram aedificabo Ecclesiam meam; et portae inferi non praevalebunt adversum eam.</p>
+            <input class="form-control form-control-lg" type="text" placeholder="can you answer that?" id="answer">
+            <button type="submit">Check</button>
+        </form>
+    </div>
+    <script>
+        
+        const MaquinaEscrever = (palavra, speed) => {
+            const escrita = palavra.innerHTML.split('');
+            palavra.innerHTML = '';
+            console.log(escrita);
+
+            
+            escrita.forEach((letra, i) => {
+                
+                setTimeout(() => palavra.innerHTML += letra, speed * i);
+                
+            });
+        }
+        MaquinaEscrever(document.querySelectorAll(".maq")[0],130);
+        setTimeout(() => {
+            document.getElementById('p').style.visibility = "visible";
+            MaquinaEscrever(document.querySelectorAll(".maq")[1],80);
+        }, 4300);
+
+
+        /*
+        MaquinaEscrever(document.querySelector("h1"),150);
+        setTimeout(() => {
+            MaquinaEscrever(document.querySelector("p"),80);
+        }, 3000);*/
+    </script>
+
+</body>
+</html>

@@ -3,14 +3,27 @@ const bodyParser = require("body-parser");
 
 const app = express();
 
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
+
 app.use(express.static(__dirname + "/public")); //deixar um diretorio publico para acesso das urls
 
-const l = __dirname + "/public/views/"
+const dir = __dirname + "/views/"
 
 app.get("/", (req,res) => {
 
-    res.sendFile(l + "index.html");
+    res.sendFile(dir + "index.html");
+    //console.log(req.body);
+    
+
 });
+
+app.post("/", (req,res) => {
+    let resposta = req.body;
+    console.log(resposta);
+    res.send("parabens!");
+    
+})
 
 
 app.listen(3000, () => {

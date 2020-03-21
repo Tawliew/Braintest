@@ -1,8 +1,8 @@
 body {
-    background-image: url(/images/capela-sistina.jpg);
+    background-image:
+    linear-gradient(to right, rgb(191,191,190, 0.50), rgb(60,1,75,0.50)),
+    url(/images/capela-sistina.jpg);
     background-size: cover;
-    text-align: center;
-    opacity: 1;
 }
 
 #title {
@@ -10,6 +10,7 @@ body {
     font-size: 2rem;
     margin: 3%;
     color: white;
+    text-align: center;
 }
 
 
@@ -21,7 +22,8 @@ body {
 
 }
 
-h1:after {
+/* BLINK EFFECT */
+.maq:after {
     content: "|";
     opacity: 0;
     animation: blink;
