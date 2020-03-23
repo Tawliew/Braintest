@@ -1,5 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const port = 3000;
 
 const app = express();
 
@@ -67,8 +68,4 @@ app.post("/q2", (req,res) => {
 });
 
 
-app.listen(3000, () => {
-    
-    console.log("on na porta 3000");
-    
-});
+app.listen(process.env.PORT || port, () => console.log("Server up on port: " + port));
