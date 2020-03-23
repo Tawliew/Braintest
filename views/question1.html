@@ -6,18 +6,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Patheis Test</title>
+    <title>Brainstest</title>
 </head>
 <body id="title">
     <div class="container">
         
-        <h1 class="maq">Patheis Test</h1>
+        <h1 class="maq">Okay. You are prepared.</h1>
 
     </div>
     <div>
-        <form action="/" method="POST">
-            <p id="p" class="maq" style="visibility: hidden">Welcome to my intelligence Test: The Patheis Test. Let's see if you can resolve my puzzles.</p>
-            <p id="p2" class="maq" style="visibility: hidden">"super hanc petram aedificabo Ecclesiam meam; et portae inferi non praevalebunt adversum eam."</p>
+        <form action="/q1" method="POST">
+            <p id="p" class="maq" style="visibility: hidden">e4 e5</p>
+            <p id="p2" class="maq" style="visibility: hidden">Dh5 Cc6</p>
+            <p id="p3" class="maq" style="visibility: hidden">Bc4 Cf6</p>
+            <p id="p4" class="maq" style="visibility: hidden">?</p>
         </form>
     </div>
     <script>
@@ -28,18 +30,18 @@
             btn.innerHTML = 'Check';
             btn.type="submit";
             input.name="resp";
-            let p2 = document.getElementById("p2");
-            p2.appendChild(document.createElement("BR"));
-            p2.appendChild(document.createElement("BR"));
-            p2.appendChild(document.createElement("BR"));
-            p2.appendChild(input);
-            p2.appendChild(btn);
+            let p4 = document.getElementById("p4");
+            p4.appendChild(document.createElement("BR"));
+            p4.appendChild(input);
+            p4.appendChild(btn);
             
         }
 
         /*MAQUINA DE ESCREVER*/
         
         const MaquinaEscrever = (palavra, speed) => {
+            console.log(palavra);
+            
             const escrita = palavra.innerHTML.split('');
             palavra.innerHTML = '';
             //console.log(escrita);
@@ -54,15 +56,23 @@
         MaquinaEscrever(document.querySelectorAll(".maq")[0],130);
         setTimeout(() => {
             document.getElementById('p').style.visibility = "visible";
-            MaquinaEscrever(document.querySelectorAll(".maq")[1],60);
+            MaquinaEscrever(document.querySelectorAll(".maq")[1],130);
             setTimeout(() => {
                 document.getElementById('p2').style.visibility = "visible";
-                MaquinaEscrever(document.querySelectorAll(".maq")[2],60);
+                MaquinaEscrever(document.querySelectorAll(".maq")[2],130);
                 setTimeout(() => {
-                    button_and_check();
-                }, 6000);
-            }, 6100);
-        }, 4300);
+                    document.getElementById('p3').style.visibility = "visible";
+                    MaquinaEscrever(document.querySelectorAll(".maq")[3],130);
+                    setTimeout(() => {
+                        document.getElementById('p4').style.visibility = "visible";
+                        MaquinaEscrever(document.querySelectorAll(".maq")[4],130);
+                        setTimeout(() => {
+                            button_and_check();
+                        }, 1000);
+                    }, 1000);
+                }, 1000);
+            }, 1000);
+        }, 4000);
     </script>
 
 </body>
