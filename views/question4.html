@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-    <!---
-        30.616674, 114.262304
-    -->
 <head>
     <link type:"text/css" rel="stylesheet" href="../css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Zilla+Slab&display=swap" rel="stylesheet">
@@ -14,14 +11,17 @@
 <body id="title">
     <div class="container">
         
-        <h1 class="maq">Nought happens without a reason</h1>
-
+        <h1 class="maq">They are acting behind the Scenes</h1>
+        
     </div>
+    
     <div>
-        <form action="/q3" method="POST">
-            <p id="p" class="maq" style="visibility: hidden">"and great earthquakes shall be in divers places, and famines, and pestilences; and fearful sights and great signs shall there be from heaven."</p>
+        <form action="/q4" method="POST">
+            <img id="i" class='maq' style="visibility: hidden" src="images/theyknew.png" alt="they knew" width=800 height=400>
+            <p id='p'></p>
         </form>
     </div>
+
     <script>
 
         let button_and_check = () => {
@@ -31,8 +31,6 @@
             btn.type="submit";
             input.name="resp";
             let p = document.getElementById("p");
-            p.appendChild(document.createElement("BR"));
-            p.appendChild(document.createElement("BR"));
             p.appendChild(input);
             p.appendChild(btn);
             
@@ -54,13 +52,13 @@
                 
             });
         }
-        MaquinaEscrever(document.querySelectorAll(".maq")[0],130);
+        MaquinaEscrever(document.querySelectorAll(".maq")[0],80);
         setTimeout(() => {
-            document.getElementById('p').style.visibility = "visible";
+            document.getElementById('i').style.visibility = "visible";
             MaquinaEscrever(document.querySelectorAll(".maq")[1],80);
             setTimeout(() => {
                 button_and_check();
-            }, 13000);
+            }, 1000);
         }, 4000);
     </script>
 

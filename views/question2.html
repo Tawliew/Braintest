@@ -16,7 +16,6 @@
     </div>
     <div>
         <form action="/q2" method="POST">
-            <img id="img" src="images/cesar.jpg"width=240 height=330 style="visibility: hidden;">
             <p id="p" class="maq" style="visibility: hidden">pdnhvxuhbrxzdqwwrfrqwlqxh</p>
         </form>
     </div>
@@ -29,6 +28,7 @@
             btn.type="submit";
             input.name="resp";
             let p = document.getElementById("p");
+            p.appendChild(document.createElement("BR"));
             p.appendChild(document.createElement("BR"));
             p.appendChild(input);
             p.appendChild(btn);
@@ -53,14 +53,11 @@
         }
         MaquinaEscrever(document.querySelectorAll(".maq")[0],130);
         setTimeout(() => {
-            document.getElementById('img').style.visibility = "visible";
+            document.getElementById('p').style.visibility = "visible";
+            MaquinaEscrever(document.querySelectorAll(".maq")[1],130);
             setTimeout(() => {
-                document.getElementById('p').style.visibility = "visible";
-                MaquinaEscrever(document.querySelectorAll(".maq")[1],130);
-                setTimeout(() => {
-                    button_and_check();
-                }, 4000);
-            }, 1000);
+                button_and_check();
+            }, 4000);
         }, 4000);
     </script>
 
